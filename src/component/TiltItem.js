@@ -21,10 +21,12 @@ const TiltItem = ({ children, options }) => {
   return (
     <Container>
       <Tilt
+        className="Tilt"
+        glare
         options={{
-          scale: 2,
-          max: 25,
-          glare: true,
+          scale: 1.1,
+          max: 100,
+
           "max-glare": 1
         }}
         style={{
@@ -44,7 +46,13 @@ const TiltItem = ({ children, options }) => {
           display: "flex"
         }}
       >
-        {children}
+        <div
+          data-tilt
+          data-tilt-scale="1.1"
+          style={{ backgroundColor: "black", padding: "20px" }}
+        >
+          {children}
+        </div>
       </Tilt>
     </Container>
   );
