@@ -7,6 +7,7 @@ import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import { Button, createTheme, ThemeProvider } from '@mui/material';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const pages = ['Início', 'Sobre Mim', 'Projetos', 'Contato'];
 
@@ -66,7 +67,7 @@ const Navbar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontWeight: '500' }}
               >
                 {page}
               </Button>

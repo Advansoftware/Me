@@ -1,9 +1,32 @@
 import { Container, Grid } from '@mui/material';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import imgheader from '../assets/header.jpg';
 import avatar from '../assets/avatar.jpg';
 import ButtonGlass from '../component/ButtonGlass';
 const Header = () =>{
+    const neon = keyframes`
+  0% {
+    box-shadow: 0 0 10px rgba(197, 40, 40, .5);
+  }
+
+  50% {
+    box-shadow: 0 0 15px  rgba(1, 11, 38, .5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(197, 40, 40, .5);
+  }
+`;
+const neonContent = keyframes`
+0% {
+    box-shadow: 0 0 10px #010b26 inset;
+  }
+  50% {
+    box-shadow: 0 0 100px rgba(197, 40, 40, .5) inset;
+  }
+  100% {
+    box-shadow: 0 0 10px #010b26 inset;
+  }
+`;
 const HeaderHome = styled.div`
     position: relative;
     background-image: url('${imgheader}');
@@ -14,13 +37,16 @@ const HeaderHome = styled.div`
     margin: 0;
     display: flex;
     align-items: center;
+    animation: ${neonContent} 5s alternate infinite ease-in-out;
 `;
 const ImageAvatar = styled.img`
     max-width: 15rem;
     border-radius: 50%;
     border: 10px solid rgba(255,255,255, .3);
-    box-shadow: 0px 0px 50px rgb(197 40 40 / 50%);
+    animation: ${neon} 2s alternate infinite ease-in-out;
 `;
+
+
     return(
         <HeaderHome>
             <Container>
