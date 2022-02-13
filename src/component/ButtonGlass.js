@@ -1,5 +1,5 @@
 import { Button, createTheme, ThemeProvider } from "@mui/material";
-
+import './ButtonGlassModule.css';
 const ButtonGlass = ({ children, onClick }) => {
   const theme = createTheme({
     components: {
@@ -23,7 +23,7 @@ const ButtonGlass = ({ children, onClick }) => {
   });
   return (
     <ThemeProvider theme={theme}>
-      <Button onClick={onClick}>{children}</Button>
+      <Button onClick={onClick} className="btn">{children}</Button>
     </ThemeProvider>
   );
 };

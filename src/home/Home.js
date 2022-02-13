@@ -8,7 +8,7 @@ const Home = () => {
       <Navbar />
       <ButtonGlass>Teste</ButtonGlass>
       <TiltItem>
-        <div>Teste asdasd asdasdad</div>
+        Teste asdasd asdasdad
       </TiltItem>
     </>
   );
