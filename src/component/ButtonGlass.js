@@ -15,7 +15,8 @@ const ButtonGlass = ({ children, onClick }) => {
             position: "relative",
             color: "white",
             paddingLeft: "2rem",
-            paddingRight: "2rem"
+            paddingRight: "2rem",
+            margin:  ".3rem",
           }
         }
       }
