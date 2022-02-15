@@ -8,9 +8,26 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo.png",
+      "src": "images/328x237.png",
       "type": "image/png",
       "sizes": "328x237"
+    },
+    {
+      "src": "images/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-1.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/screenshot-2.png",
+      "sizes": "750x1334",
+      "type": "image/png"
     }
   ],
   "start_url": "https://brunoantunes.tech/",
