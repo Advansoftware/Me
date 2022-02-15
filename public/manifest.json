@@ -8,9 +8,15 @@
       "type": "image/x-icon"
     },
     {
-      "src": "images/328x237.png",
+      "src": "faviconMask.ico",
+      "sizes": "179x179",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/310x310.png",
       "type": "image/png",
-      "sizes": "328x237"
+      "sizes": "310x310"
     },
     {
       "src": "images/logo512.png",
@@ -32,6 +38,8 @@
   ],
   "start_url": "https://brunoantunes.tech/",
   "display": "fullscreen",
+  "description": "Meu Portifolio",
+  "orientation":"portrait",
   "theme_color": "#2a0547",
-  "background_color": "#00001fcc"
+  "background_color": "#2a0547"
 }
