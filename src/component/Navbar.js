@@ -33,8 +33,8 @@ const Navbar = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-    <AppBar position="fixed" colorTransparent>
+    <ThemeProvider theme={theme} >
+    <AppBar position="fixed" colorTransparent sx={{ display: { xs: 'none', md: 'flex' } }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters >
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

@@ -52,6 +52,7 @@ const ImageAvatar = styled.img`
             <Container>
                 <Grid 
                     container 
+                    direction={{xs:"column-reverse", md: 'row'}}
                     justifyContent="space-between"
                     spacing={3}
                     alignContent="center"
