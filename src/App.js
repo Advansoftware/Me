@@ -1,6 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./home/Home";
+import "./index.css";
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -9,8 +10,11 @@ const darkTheme = createTheme({
     },
   },
 });
-function App() {
-  
+
+function App(props) {
+  const { appServiceWorker } = props;
+    appServiceWorker.onInstalled(() => this.setState({ showInstalledMessage: true }))
+    appServiceWorker.onUpdateFound(() => this.setState({ showUpdateMessage: true }))
   return (
     <HelmetProvider>
       <ThemeProvider theme={darkTheme}

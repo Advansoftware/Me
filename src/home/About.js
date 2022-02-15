@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import fundo from '../assets/about.jpg';
-import logo from "../assets/logo.png"
+import fundo from '../assets/about.webp';
+import logo from "../assets/logo.webp"
 const About = () => {
 
         const neon = keyframes`

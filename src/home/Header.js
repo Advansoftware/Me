@@ -1,7 +1,7 @@
 import { Container, Grid } from '@mui/material';
 import styled, { keyframes } from 'styled-components';
-import imgheader from '../assets/header.jpg';
-import avatar from '../assets/avatar.jpg';
+import imgheader from '../assets/header.webp';
+import avatar from '../assets/avatar.webp';
 import ButtonGlass from '../component/ButtonGlass';
 const Header = () =>{
     const neon = keyframes`
@@ -52,6 +52,7 @@ const ImageAvatar = styled.img`
             <Container>
                 <Grid 
                     container 
+                    direction={{xs:"column-reverse", md: 'row'}}
                     justifyContent="space-between"
                     spacing={3}
                     alignContent="center"
@@ -64,7 +65,7 @@ const ImageAvatar = styled.img`
                         </ButtonGlass>
                     </Grid>
                     <Grid item xs={12} sm={6}>   
-                        <ImageAvatar src={avatar}/>
+                        <ImageAvatar src={avatar} alt="Bruno Antunes"/>
                     </Grid>
                 </Grid>
             </Container>
