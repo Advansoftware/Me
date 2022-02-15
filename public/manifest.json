@@ -4,13 +4,13 @@
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "179x179",
+      "sizes": "176x176",
       "type": "image/x-icon"
     },
     {
-      "src": "faviconMask.ico",
-      "sizes": "179x179",
-      "type": "image/x-icon",
+      "src": "maskable_icon.png",
+      "sizes": "176x176",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
