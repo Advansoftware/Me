@@ -16,7 +16,18 @@ import { motion } from 'framer-motion';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import Link from 'next/link';
+
+const painPoints = [
+  'Seu site parece ter sido feito nos anos 2000?',
+  'Clientes reclamam que não funciona no celular?',
+  'Você tem medo de ser hackeado?',
+  'Seu site demora para carregar?',
+  'Não aparece no Google?',
+  'Difícil de atualizar conteúdo?',
+];
 
 const improvements = [
   {
@@ -317,10 +328,92 @@ export default function CaseStudyBrazopolis() {
           ))}
         </Grid>
 
-        {/* CTA */}
-        <Box sx={{ textAlign: 'center', py: 4 }}>
+        {/* Pain Points - Identificação */}
+        <Paper
+          component={motion.div}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          sx={{
+            p: 4,
+            mb: 6,
+            background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%)',
+            border: '2px solid rgba(139, 92, 246, 0.3)',
+            borderRadius: 3,
+            textAlign: 'center',
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{
+              mb: 3,
+              fontWeight: 700,
+              background: 'linear-gradient(135deg, #8B5CF6 0%, #10B981 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Isso parece com o seu site?
+          </Typography>
+          <Grid container spacing={2} sx={{ mb: 4 }}>
+            {painPoints.map((pain, index) => (
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                <Paper
+                  component={motion.div}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  sx={{
+                    p: 2,
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: 2,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1,
+                  }}
+                >
+                  <WarningAmberIcon sx={{ color: '#F59E0B' }} />
+                  <Typography variant="body2" color="text.secondary">
+                    {pain}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+          <Typography variant="h5" sx={{ mb: 3, fontWeight: 600 }}>
+            Posso fazer isso pelo seu negócio também.
+          </Typography>
           <Button
             variant="contained"
+            size="large"
+            href="https://wa.me/5535984216196?text=Ol%C3%A1%20Bruno!%20Vi%20seu%20case%20da%20Prefeitura%20de%20Braz%C3%B3polis%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+            target="_blank"
+            rel="noopener noreferrer"
+            startIcon={<WhatsAppIcon />}
+            sx={{
+              px: 5,
+              py: 2,
+              fontSize: '1.1rem',
+              background: '#25D366',
+              fontWeight: 700,
+              '&:hover': {
+                background: '#128C7E',
+                transform: 'scale(1.05)',
+              },
+              transition: 'all 0.3s ease',
+            }}
+          >
+            Vamos Conversar no WhatsApp
+          </Button>
+        </Paper>
+
+        {/* CTA Secundário */}
+        <Box sx={{ textAlign: 'center', py: 4 }}>
+          <Button
+            variant="outlined"
             size="large"
             href="https://visitebrazopolis.com.br"
             target="_blank"
@@ -328,14 +421,16 @@ export default function CaseStudyBrazopolis() {
             sx={{
               px: 4,
               py: 1.5,
-              background: 'linear-gradient(135deg, #8B5CF6 0%, #10B981 100%)',
+              borderColor: 'rgba(255, 255, 255, 0.2)',
+              color: 'text.primary',
               fontWeight: 600,
               '&:hover': {
-                background: 'linear-gradient(135deg, #7C3AED 0%, #059669 100%)',
+                borderColor: 'primary.main',
+                background: 'rgba(139, 92, 246, 0.1)',
               },
             }}
           >
-            Visitar Site Novo
+            Ver Site Novo ao Vivo
           </Button>
         </Box>
       </Container>

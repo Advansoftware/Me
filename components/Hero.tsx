@@ -23,6 +23,7 @@ export default function Hero() {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
+        pt: { xs: 10, md: 0 },
         background: 'radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%)',
       }}
     >
@@ -183,11 +184,20 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}
+            sx={{ 
+              flex: { xs: 'none', md: 1 }, 
+              display: 'flex', 
+              justifyContent: 'center',
+              width: '100%',
+              maxWidth: { xs: '200px', sm: '250px', md: '320px' },
+              mx: 'auto',
+            }}
           >
             <Box
               sx={{
                 position: 'relative',
+                width: '100%',
+                aspectRatio: '1',
                 '&::before': {
                   content: '""',
                   position: 'absolute',
@@ -207,8 +217,8 @@ export default function Hero() {
                 src="/avatar.jpg"
                 alt="Bruno Antunes"
                 sx={{
-                  width: { xs: 250, md: 320 },
-                  height: { xs: 250, md: 320 },
+                  width: '100%',
+                  height: '100%',
                   border: '4px solid rgba(10, 10, 15, 1)',
                   position: 'relative',
                 }}
