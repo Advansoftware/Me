@@ -12,12 +12,15 @@ import {
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import ArticleIcon from '@mui/icons-material/Article';
+import Link from 'next/link';
 
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   url: string;
+  caseStudyUrl?: string;
   tags: string[];
   index: number;
 }
@@ -27,6 +30,7 @@ export default function ProjectCard({
   description,
   image,
   url,
+  caseStudyUrl,
   tags,
   index,
 }: ProjectCardProps) {
@@ -42,7 +46,6 @@ export default function ProjectCard({
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        cursor: 'pointer',
         transition: 'all 0.3s ease',
         '&:hover': {
           boxShadow: '0 20px 60px rgba(139, 92, 246, 0.2)',
@@ -51,7 +54,6 @@ export default function ProjectCard({
           },
         },
       }}
-      onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
     >
       <Box sx={{ position: 'relative', overflow: 'hidden' }}>
         <CardMedia
@@ -101,22 +103,44 @@ export default function ProjectCard({
           ))}
         </Stack>
 
-        <Button
-          variant="outlined"
-          endIcon={<OpenInNewIcon />}
-          fullWidth
-          sx={{
-            borderColor: 'rgba(255, 255, 255, 0.2)',
-            color: 'text.primary',
-            '&:hover': {
-              borderColor: 'primary.main',
-              background: 'rgba(139, 92, 246, 0.1)',
-            },
-          }}
-        >
-          Visitar Site
-        </Button>
+        <Stack direction="row" spacing={1}>
+          {caseStudyUrl && (
+            <Button
+              component={Link}
+              href={caseStudyUrl}
+              variant="contained"
+              startIcon={<ArticleIcon />}
+              sx={{
+                flex: 1,
+                background: 'linear-gradient(135deg, #8B5CF6 0%, #10B981 100%)',
+                '&:hover': {
+                  background: 'linear-gradient(135deg, #7C3AED 0%, #059669 100%)',
+                },
+              }}
+            >
+              Estudo de Caso
+            </Button>
+          )}
+          <Button
+            variant="outlined"
+            endIcon={<OpenInNewIcon />}
+            sx={{
+              flex: caseStudyUrl ? 1 : undefined,
+              width: caseStudyUrl ? undefined : '100%',
+              borderColor: 'rgba(255, 255, 255, 0.2)',
+              color: 'text.primary',
+              '&:hover': {
+                borderColor: 'primary.main',
+                background: 'rgba(139, 92, 246, 0.1)',
+              },
+            }}
+            onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
+          >
+            Visitar
+          </Button>
+        </Stack>
       </CardContent>
     </Card>
   );
 }
+

@@ -6,6 +6,15 @@ import ProjectCard from './ProjectCard';
 
 const projects = [
   {
+    title: 'Prefeitura de Brazópolis',
+    description:
+      'Modernização completa do portal municipal. Redesign de UX/UI com foco em acessibilidade e experiência do cidadão.',
+    image: '/case-studies/new-home.png',
+    url: 'https://visitebrazopolis.com.br/',
+    caseStudyUrl: '/case-study/brazopolis',
+    tags: ['Next.js', 'NestJS', 'TypeScript', 'PostgreSQL'],
+  },
+  {
     title: 'Gastometria',
     description:
       'Dashboard financeiro com IA para análise e categorização de gastos. Controle sua vida financeira com inteligência artificial.',
