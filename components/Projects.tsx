@@ -30,6 +30,14 @@ const projects = [
     url: 'https://bolaofacil.store/',
     tags: ['TypeScript', 'Next.js', 'Node.js'],
   },
+  {
+    title: 'RespondIA',
+    description:
+      'Secretária de IA no WhatsApp. Automatize atendimento 24/7, gerencie agenda integrada ao Google Calendar e controle despesas.',
+    image: '/projects/respondia.png',
+    url: 'https://respondia.pro/',
+    tags: ['NestJS', 'Vite', 'PostgreSQL', 'Redis', 'Evolution API', 'Google Calendar'],
+  },
 ];
 
 export default function Projects() {
