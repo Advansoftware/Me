@@ -1,15 +1,72 @@
 'use client';
 
 import * as React from 'react';
+import createCache from '@emotion/cache';
+import type { EmotionCache } from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
+import { useServerInsertedHTML } from 'next/navigation';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { theme } from './theme';
 
+// Sem este cache o Emotion injeta os <style> dentro do <body>, na frente do <main>,
+// e o HTML do servidor deixa de bater com o que o React monta no cliente.
+// useServerInsertedHTML leva esses estilos para o <head> antes da hidratação.
+function useEmotionRegistry() {
+  return React.useState(() => {
+    const cache: EmotionCache = createCache({ key: 'mui' });
+    cache.compat = true;
+
+    const prevInsert = cache.insert;
+    let inserted: string[] = [];
+
+    cache.insert = (...args: Parameters<typeof prevInsert>) => {
+      const [, serialized] = args;
+      if (cache.inserted[serialized.name] === undefined) {
+        inserted.push(serialized.name);
+      }
+      return prevInsert(...args);
+    };
+
+    const flush = () => {
+      const names = inserted;
+      inserted = [];
+      return names;
+    };
+
+    return { cache, flush };
+  })[0];
+}
+
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
+  const { cache, flush } = useEmotionRegistry();
+
+  useServerInsertedHTML(() => {
+    const names = flush();
+    if (names.length === 0) {
+      return null;
+    }
+
+    let styles = '';
+    for (const name of names) {
+      styles += cache.inserted[name];
+    }
+
+    return (
+      <style
+        key={cache.key}
+        data-emotion={`${cache.key} ${names.join(' ')}`}
+        dangerouslySetInnerHTML={{ __html: styles }}
+      />
+    );
+  });
+
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
+    <CacheProvider value={cache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </CacheProvider>
   );
 }
