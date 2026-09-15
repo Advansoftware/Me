@@ -4,7 +4,6 @@ import {
   Box,
   Card,
   CardContent,
-  CardMedia,
   Typography,
   Button,
   Chip,
@@ -14,6 +13,7 @@ import { motion } from 'framer-motion';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ArticleIcon from '@mui/icons-material/Article';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProjectCardProps {
   title: string;
@@ -61,16 +61,22 @@ export default function ProjectCard({
         },
       }}
     >
-      <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: '12px 12px 0 0' }}>
-        <CardMedia
-          component="img"
-          height="220"
-          image={image}
+      <Box
+        sx={{
+          position: 'relative',
+          overflow: 'hidden',
+          borderRadius: '12px 12px 0 0',
+          height: 220,
+        }}
+      >
+        <Image
+          src={image}
           alt={title}
+          fill
           className="project-image"
-          sx={{
-            transition: 'transform 0.5s ease',
-          }}
+          sizes="(max-width: 900px) 100vw, 50vw"
+          priority={index === 0}
+          style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
         />
         <Box
           sx={{
@@ -84,6 +90,7 @@ export default function ProjectCard({
       <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <Typography
           variant="h4"
+          component="h3"
           sx={{
             mb: 1,
             fontSize: '1.25rem',

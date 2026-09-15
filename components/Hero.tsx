@@ -1,6 +1,7 @@
 'use client';
 
-import { Box, Container, Typography, Button, Stack, Avatar } from '@mui/material';
+import { Box, Container, Typography, Button, Stack } from '@mui/material';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -213,16 +214,25 @@ export default function Hero() {
                 },
               }}
             >
-              <Avatar
-                src="/avatar.jpg"
-                alt="Bruno Antunes"
+              <Box
                 sx={{
+                  position: 'relative',
                   width: '100%',
                   height: '100%',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
                   border: '4px solid rgba(10, 10, 15, 1)',
-                  position: 'relative',
                 }}
-              />
+              >
+                <Image
+                  src="/avatar.jpg"
+                  alt="Bruno Antunes"
+                  fill
+                  priority
+                  sizes="(max-width: 600px) 200px, (max-width: 900px) 250px, 320px"
+                  style={{ objectFit: 'cover' }}
+                />
+              </Box>
             </Box>
           </Box>
         </Stack>

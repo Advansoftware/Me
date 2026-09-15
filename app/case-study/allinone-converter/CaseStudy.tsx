@@ -6,7 +6,6 @@ import {
   Typography,
   Grid,
   Card,
-  CardMedia,
   Chip,
   Paper,
   Button,
@@ -21,6 +20,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import CloudSyncIcon from '@mui/icons-material/CloudSync';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const technologies = [
   'React 18',
@@ -89,14 +89,20 @@ const services = [
 const screens = [
   {
     src: '/case-studies/allinone/dashboard.png',
+    width: 1877,
+    height: 678,
     caption: 'O painel, com a conversão a um clique e a contagem do que está na fila',
   },
   {
     src: '/case-studies/allinone/upload.png',
+    width: 1877,
+    height: 913,
     caption: 'Arquivo, URL ou magnet entram pela mesma caixa',
   },
   {
     src: '/case-studies/allinone/torrents.png',
+    width: 1877,
+    height: 913,
     caption: 'O gerenciador de torrent, com velocidade, progresso e peers',
   },
 ];
@@ -150,7 +156,7 @@ export default function CaseStudyAllInOne() {
             >
               AllInOne Converter
             </Typography>
-            <Typography variant="h5" color="text.secondary" sx={{ mb: 3 }}>
+            <Typography variant="h5" component="p" color="text.secondary" sx={{ mb: 3 }}>
               Estudo de caso: conversor de mídia em microserviços
             </Typography>
 
@@ -185,7 +191,7 @@ export default function CaseStudyAllInOne() {
             borderRadius: 3,
           }}
         >
-          <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
+          <Typography variant="h5" component="h2" sx={{ mb: 2, fontWeight: 600 }}>
             O que ele faz
           </Typography>
           <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
@@ -197,7 +203,7 @@ export default function CaseStudyAllInOne() {
         </Paper>
 
         {/* Arquitetura */}
-        <Typography variant="h4" sx={{ mb: 2, fontWeight: 700 }}>
+        <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 700 }}>
           Como está montado
         </Typography>
         <Typography color="text.secondary" sx={{ mb: 4, lineHeight: 1.8, maxWidth: 820 }}>
@@ -314,7 +320,7 @@ export default function CaseStudyAllInOne() {
         </Paper>
 
         {/* Serviços */}
-        <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
+        <Typography variant="h4" component="h2" sx={{ mb: 4, fontWeight: 700 }}>
           Os quatro serviços
         </Typography>
         <Grid container spacing={3} sx={{ mb: 8 }}>
@@ -330,7 +336,7 @@ export default function CaseStudyAllInOne() {
               >
                 <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 1 }}>
                   <Box sx={{ color: '#A78BFA', display: 'flex' }}>{service.icon}</Box>
-                  <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                  <Typography variant="h6" component="h3" sx={{ fontWeight: 700 }}>
                     {service.name}
                   </Typography>
                   <Chip label={service.port} size="small" />
@@ -356,7 +362,7 @@ export default function CaseStudyAllInOne() {
         </Grid>
 
         {/* Telas */}
-        <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
+        <Typography variant="h4" component="h2" sx={{ mb: 4, fontWeight: 700 }}>
           As telas
         </Typography>
         <Grid container spacing={3} sx={{ mb: 8 }}>
@@ -370,11 +376,13 @@ export default function CaseStudyAllInOne() {
                 transition={{ delay: index * 0.05 }}
                 sx={{ backdropFilter: 'none' }}
               >
-                <CardMedia
-                  component="img"
-                  image={screen.src}
+                <Image
+                  src={screen.src}
                   alt={screen.caption}
-                  sx={{ width: '100%' }}
+                  width={screen.width}
+                  height={screen.height}
+                  sizes="(max-width: 1200px) 100vw, 1152px"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
                 <Box sx={{ p: 2 }}>
                   <Typography variant="body2" color="text.secondary">
@@ -400,7 +408,7 @@ export default function CaseStudyAllInOne() {
             borderRadius: 3,
           }}
         >
-          <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
+          <Typography variant="h5" component="h2" sx={{ mb: 2, fontWeight: 600 }}>
             Subindo na sua máquina
           </Typography>
           <Typography color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
@@ -448,7 +456,7 @@ make up`}
               'linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%)',
           }}
         >
-          <Typography variant="h5" sx={{ mb: 3, fontWeight: 600 }}>
+          <Typography variant="h5" component="p" sx={{ mb: 3, fontWeight: 600 }}>
             O código está todo aberto.
           </Typography>
           <Stack

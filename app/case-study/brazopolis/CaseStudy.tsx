@@ -6,7 +6,6 @@ import {
   Typography,
   Grid,
   Card,
-  CardMedia,
   Chip,
   Paper,
   Button,
@@ -19,6 +18,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const painPoints = [
   'Seu site parece ter sido feito nos anos 2000?',
@@ -136,7 +136,7 @@ export default function CaseStudyBrazopolis() {
             >
               Prefeitura de Brazópolis
             </Typography>
-            <Typography variant="h5" color="text.secondary" sx={{ mb: 3 }}>
+            <Typography variant="h5" component="p" color="text.secondary" sx={{ mb: 3 }}>
               Estudo de caso: modernização do portal municipal
             </Typography>
 
@@ -171,7 +171,7 @@ export default function CaseStudyBrazopolis() {
             borderRadius: 3,
           }}
         >
-          <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
+          <Typography variant="h5" component="h2" sx={{ mb: 2, fontWeight: 600 }}>
             O desafio
           </Typography>
           <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
@@ -186,7 +186,7 @@ export default function CaseStudyBrazopolis() {
 
         {/* Comparisons */}
         <Typography
-          variant="h4"
+          variant="h4" component="h2"
           sx={{
             mb: 4,
             fontWeight: 700,
@@ -214,7 +214,7 @@ export default function CaseStudyBrazopolis() {
               borderRadius: 3,
             }}
           >
-            <Typography variant="h6" sx={{ mb: 3, textAlign: 'center' }}>
+            <Typography variant="h6" component="h3" sx={{ mb: 3, textAlign: 'center' }}>
               {comparison.label}
             </Typography>
             <Grid container spacing={3}>
@@ -237,11 +237,13 @@ export default function CaseStudyBrazopolis() {
                       border: '2px solid rgba(239, 68, 68, 0.3)',
                     }}
                   >
-                    <CardMedia
-                      component="img"
-                      image={comparison.old}
-                      alt={`${comparison.label} - Versão Antiga`}
-                      sx={{ width: '100%', height: 'auto' }}
+                    <Image
+                      src={comparison.old}
+                      alt={`${comparison.label}, versão antiga`}
+                      width={1920}
+                      height={882}
+                      sizes="(max-width: 900px) 100vw, 50vw"
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
                     />
                   </Card>
                 </Box>
@@ -265,11 +267,13 @@ export default function CaseStudyBrazopolis() {
                       border: '2px solid rgba(16, 185, 129, 0.3)',
                     }}
                   >
-                    <CardMedia
-                      component="img"
-                      image={comparison.new}
-                      alt={`${comparison.label} - Versão Nova`}
-                      sx={{ width: '100%', height: 'auto' }}
+                    <Image
+                      src={comparison.new}
+                      alt={`${comparison.label}, versão nova`}
+                      width={1920}
+                      height={882}
+                      sizes="(max-width: 900px) 100vw, 50vw"
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
                     />
                   </Card>
                 </Box>
@@ -282,7 +286,7 @@ export default function CaseStudyBrazopolis() {
         <Divider sx={{ my: 6, borderColor: 'rgba(255, 255, 255, 0.1)' }} />
 
         <Typography
-          variant="h4"
+          variant="h4" component="h2"
           sx={{
             mb: 4,
             fontWeight: 700,
@@ -316,7 +320,7 @@ export default function CaseStudyBrazopolis() {
                   transition: 'all 0.3s ease',
                 }}
               >
-                <Typography variant="h6" sx={{ mb: 1, fontWeight: 600 }}>
+                <Typography variant="h6" component="h3" sx={{ mb: 1, fontWeight: 600 }}>
                   {item.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
@@ -343,7 +347,7 @@ export default function CaseStudyBrazopolis() {
           }}
         >
           <Typography
-            variant="h4"
+            variant="h4" component="h2"
             sx={{
               mb: 3,
               fontWeight: 700,
@@ -382,7 +386,7 @@ export default function CaseStudyBrazopolis() {
               </Grid>
             ))}
           </Grid>
-          <Typography variant="h5" sx={{ mb: 3, fontWeight: 600 }}>
+          <Typography variant="h5" component="p" sx={{ mb: 3, fontWeight: 600 }}>
             Posso fazer isso pelo seu negócio também.
           </Typography>
           <Button

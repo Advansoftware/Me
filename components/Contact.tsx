@@ -50,7 +50,7 @@ export default function Contact() {
           }}
         >
           <Typography
-            variant="h3"
+            variant="h3" component="h2"
             sx={{
               mb: 2,
               fontWeight: 800,
@@ -63,7 +63,7 @@ export default function Contact() {
             Precisa de um desenvolvedor?
           </Typography>
           <Typography
-            variant="h6"
+            variant="h6" component="p"
             sx={{
               color: 'text.secondary',
               mb: 4,

@@ -52,6 +52,8 @@ export default function Company() {
                 component="img"
                 src="/advansoftware-logo.svg"
                 alt="Logo da AdvanSoftware"
+                width={170}
+                height={170}
                 sx={{
                   width: { xs: 120, md: 170 },
                   height: { xs: 120, md: 170 },
@@ -74,7 +76,7 @@ export default function Company() {
               />
 
               <Typography
-                variant="h3"
+                variant="h3" component="h2"
                 sx={{
                   fontWeight: 800,
                   mb: 2,

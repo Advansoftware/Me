@@ -83,7 +83,7 @@ export default function About() {
                     {stat.icon}
                   </Box>
                   <Typography
-                    variant="h3"
+                    variant="h3" component="p"
                     sx={{
                       mb: 1,
                       background: 'linear-gradient(135deg, #8B5CF6 0%, #10B981 100%)',
