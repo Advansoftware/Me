@@ -20,6 +20,7 @@ const skills = [
   { name: 'Git', color: '#F05032' },
   { name: 'AWS', color: '#FF9900' },
   { name: 'Material UI', color: '#007FFF' },
+  { name: 'IA / LLMs', color: '#10A37F' },
 ];
 
 export default function Skills() {
@@ -61,8 +62,7 @@ export default function Skills() {
               mb: 8,
             }}
           >
-            Ferramentas e tecnologias que utilizo no dia a dia para criar
-            aplicações incríveis.
+            O que eu uso no dia a dia.
           </Typography>
         </Box>
 

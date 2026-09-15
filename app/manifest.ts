@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Bruno Antunes | Full Stack Developer',
     short_name: 'Bruno Dev',
-    description: 'Desenvolvedor Full Stack especialista em React, Next.js, Node.js, NestJS, PHP e Flutter. Transformando ideias em soluções digitais.',
+    description: 'Desenvolvedor full stack em Brazópolis/MG. React, Next.js, Node.js, NestJS, PHP, Flutter e IA aplicada a produto.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0A0A0F',

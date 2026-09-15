@@ -15,9 +15,10 @@ const socialLinks = [
 ];
 
 const solutions = [
-  'Sites modernos e responsivos',
-  'Sistemas web personalizados',
+  'Sites responsivos',
+  'Sistemas web sob medida',
   'APIs e integrações',
+  'Automações e agentes de IA',
   'Apps mobile (Flutter)',
   'E-commerce e landing pages',
   'Manutenção e suporte',
@@ -59,7 +60,7 @@ export default function Contact() {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Precisa de um Desenvolvedor?
+            Precisa de um desenvolvedor?
           </Typography>
           <Typography
             variant="h6"
@@ -70,9 +71,9 @@ export default function Contact() {
               mx: 'auto',
             }}
           >
-            Transformo suas ideias em soluções digitais de alto impacto.
+            Cuido do projeto inteiro, do primeiro rascunho ao deploy.
             <br />
-            Do conceito ao deploy, cuido de tudo.
+            Me conte o que você precisa.
           </Typography>
 
           {/* Solutions Grid */}

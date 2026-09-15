@@ -23,6 +23,7 @@ import { motion } from 'framer-motion';
 const navItems = [
   { label: 'Início', href: '#home' },
   { label: 'Sobre', href: '#about' },
+  { label: 'Empresa', href: '#company' },
   { label: 'Projetos', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contato', href: '#contact' },

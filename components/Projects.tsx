@@ -8,24 +8,24 @@ const projects = [
   {
     title: 'Prefeitura de Brazópolis',
     description:
-      'Modernização completa do portal municipal. Redesign de UX/UI com foco em acessibilidade e experiência do cidadão.',
+      'Portal municipal refeito do zero. Saiu do PHP 5 e entrou Next.js com NestJS, layout responsivo e controles de acessibilidade.',
     image: '/case-studies/new-home.png',
-    url: 'https://visitebrazopolis.com.br/',
+    url: 'https://brazopolis.mg.gov.br/',
     caseStudyUrl: '/case-study/brazopolis',
     tags: ['Next.js', 'NestJS', 'TypeScript', 'PostgreSQL'],
   },
   {
-    title: 'Gastometria',
+    title: 'TamoQuite',
     description:
-      'Dashboard financeiro com IA para análise e categorização de gastos. Controle sua vida financeira com inteligência artificial.',
-    image: '/projects/gastometria.png',
-    url: 'https://gastometria.com.br/',
-    tags: ['React', 'Node.js', 'IA', 'TypeScript'],
+      'Gestão de repasses, empréstimos e cobranças. Um cron dispara a mensagem no WhatsApp no dia do vencimento e depois dele, sem ninguém precisar lembrar.',
+    image: '/projects/tamoquite.png',
+    url: 'https://tamoquite.app/',
+    tags: ['Next.js', 'NestJS', 'Prisma', 'MySQL', 'Evolution API', 'Stripe'],
   },
   {
     title: 'Bolão Fácil',
     description:
-      'O melhor gerenciador de bolão grátis do Brasil. Controle cotas, jogos e pagamentos para Mega-Sena, Lotofácil e Quina.',
+      'Gerenciador de bolão gratuito. Controla cotas, jogos e pagamentos de Mega-Sena, Lotofácil e Quina.',
     image: '/projects/bolaofacil.png',
     url: 'https://bolaofacil.store/',
     tags: ['TypeScript', 'Next.js', 'Node.js'],
@@ -33,10 +33,20 @@ const projects = [
   {
     title: 'RespondIA',
     description:
-      'Secretária de IA no WhatsApp. Automatize atendimento 24/7, gerencie agenda integrada ao Google Calendar e controle despesas.',
+      'Secretária de IA no WhatsApp. Responde clientes a qualquer hora, marca compromissos no Google Calendar e, no modo finance, categoriza as despesas sozinha.',
     image: '/projects/respondia.png',
     url: 'https://respondia.pro/',
     tags: ['NestJS', 'Vite', 'PostgreSQL', 'Redis', 'Evolution API', 'Google Calendar'],
+  },
+  {
+    title: 'AllInOne Converter',
+    description:
+      'Conversor de mídia open source em microserviços. Converte vídeo com FFmpeg, baixa de mais de mil sites com yt-dlp, puxa torrent por magnet e ainda faz streaming HLS.',
+    image: '/projects/allinone-converter.png',
+    url: 'https://github.com/Advansoftware/allInOne-Converter',
+    urlLabel: 'GitHub',
+    caseStudyUrl: '/case-study/allinone-converter',
+    tags: ['React 18', 'Laravel 10', 'Python 3.11', 'FFmpeg', 'Redis', 'Docker'],
   },
 ];
 
@@ -66,7 +76,7 @@ export default function Projects() {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Projetos em Destaque
+            Projetos
           </Typography>
           <Typography
             variant="body1"
@@ -78,12 +88,11 @@ export default function Projects() {
               mb: 8,
             }}
           >
-            Alguns dos projetos que desenvolvi recentemente, aplicando as melhores
-            práticas e tecnologias modernas.
+            O que desenvolvi recentemente.
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justifyContent="center">
           {projects.map((project, index) => (
             <Grid size={{ xs: 12, md: 6 }} key={project.title}>
               <ProjectCard {...project} index={index} />

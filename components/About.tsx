@@ -8,7 +8,7 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 
 const stats = [
-  { icon: <FolderCopyIcon sx={{ fontSize: 40 }} />, value: '70+', label: 'Repositórios no GitHub' },
+  { icon: <FolderCopyIcon sx={{ fontSize: 40 }} />, value: '80+', label: 'Repositórios no GitHub' },
   { icon: <CodeIcon sx={{ fontSize: 40 }} />, value: '2.5K+', label: 'Contribuições' },
   { icon: <AcUnitIcon sx={{ fontSize: 40 }} />, value: '🏆', label: 'Arctic Code Vault' },
 ];
@@ -40,7 +40,7 @@ export default function About() {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Sobre Mim
+            Sobre mim
           </Typography>
           <Typography
             variant="body1"
@@ -52,9 +52,8 @@ export default function About() {
               mb: 8,
             }}
           >
-            Desenvolvedor Full Stack apaixonado por criar soluções que fazem a diferença.
-            Sempre aprendendo novas tecnologias e buscando entregar código limpo,
-            performático e escalável.
+            Gosto de entregar código que outra pessoa consiga ler seis meses depois,
+            sem precisar me perguntar nada.
           </Typography>
         </Box>
 
@@ -113,16 +112,18 @@ export default function About() {
         >
           <Card sx={{ p: 4 }}>
             <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.9 }}>
-              🔭 Atualmente trabalhando em <strong style={{ color: '#8B5CF6' }}>projetos web inovadores</strong> e 
-              colaborando com a <strong style={{ color: '#10B981' }}>Prefeitura de Brazópolis</strong>.
+              Hoje colaboro com a{' '}
+              <strong style={{ color: '#10B981' }}>Prefeitura de Brazópolis</strong>, onde
+              refiz o portal municipal do zero.
               <br /><br />
-              🌱 Sempre aprendendo novas tecnologias! Agora explorando <strong style={{ color: '#02569B' }}>Flutter</strong> para 
-              desenvolvimento mobile e evoluindo minhas skills em arquitetura de software.
+              Além do desenvolvimento tradicional, trabalho com IA dentro do produto. O
+              RespondIA atende clientes no WhatsApp, marca compromissos na agenda e, no modo
+              finance, categoriza as despesas sozinho.
               <br /><br />
-              👯 Procurando colaborar em <strong style={{ color: '#8B5CF6' }}>projetos open source</strong>. 
-              Pergunte-me sobre <strong style={{ color: '#10B981' }}>React, Next.js, Node.js, PHP</strong>!
-              <br /><br />
-              ⚡ <em>Curiosidade: Adoro resolver problemas complexos!</em> 🚀
+              No momento estou aprendendo Flutter para mobile e estudando arquitetura de
+              software. O que eu construo fica quase todo no{' '}
+              <Box component="a" href="https://github.com/Advansoftware?tab=repositories" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.light', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>GitHub</Box>.
+              Se você tem um projeto open source em React, Next.js, Node.js ou PHP, me chame.
             </Typography>
           </Card>
         </Box>

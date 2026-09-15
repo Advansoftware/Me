@@ -31,28 +31,28 @@ const painPoints = [
 
 const improvements = [
   {
-    title: 'Design Moderno',
-    description: 'Transição de layout Web 2.0 para design flat moderno com Material UI',
+    title: 'Design',
+    description: 'Saiu o layout Web 2.0, entrou um design flat construído com Material UI',
   },
   {
     title: 'Segurança',
-    description: 'Migração de PHP 5 vulnerável para arquitetura moderna, eliminando ataques hacker recorrentes',
+    description: 'Fim do PHP 5, que era a porta de entrada dos ataques recorrentes',
   },
   {
-    title: 'Cards de Serviços',
-    description: 'Acesso rápido a serviços municipais através de cards organizados por categoria',
+    title: 'Cards de serviços',
+    description: 'Serviços municipais em cards, organizados por categoria',
   },
   {
-    title: 'Busca Inteligente',
-    description: 'Barra de busca global (Ctrl+K) para encontrar informações rapidamente',
+    title: 'Busca global',
+    description: 'Barra de busca no Ctrl+K, em qualquer página do portal',
   },
   {
     title: 'Responsivo',
-    description: 'Layout 100% responsivo para acesso em dispositivos móveis',
+    description: 'Layout que funciona no celular, sem versão separada para mobile',
   },
   {
     title: 'Acessibilidade',
-    description: 'Controles de acessibilidade nativos: ajuste de fonte e alto contraste',
+    description: 'Controles nativos de ajuste de fonte e alto contraste',
   },
   {
     title: 'Performance',
@@ -115,7 +115,7 @@ export default function CaseStudyBrazopolis() {
               '&:hover': { color: 'primary.main' },
             }}
           >
-            Voltar ao Portfólio
+            Voltar ao portfólio
           </Button>
 
           <motion.div
@@ -137,7 +137,7 @@ export default function CaseStudyBrazopolis() {
               Prefeitura de Brazópolis
             </Typography>
             <Typography variant="h5" color="text.secondary" sx={{ mb: 3 }}>
-              Estudo de Caso: Modernização do Portal Municipal
+              Estudo de caso: modernização do portal municipal
             </Typography>
 
             <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mb: 4 }}>
@@ -172,16 +172,15 @@ export default function CaseStudyBrazopolis() {
           }}
         >
           <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
-            O Desafio
+            O desafio
           </Typography>
           <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
-            A Prefeitura de Brazópolis possuía um portal institucional desatualizado, desenvolvido em
-            PHP 5, com design dos anos 2000, navegação confusa e sem responsividade para dispositivos móveis.
-            Além disso, o site sofria constantes <strong>ataques hacker</strong> devido às vulnerabilidades
-            de segurança da versão obsoleta do PHP. O primeiro passo foi migrar para PHP 8 e corrigir
-            todas as falhas de segurança. Em seguida, criamos uma plataforma completamente nova
-            com arquitetura moderna que facilitasse o acesso dos cidadãos aos serviços municipais,
-            licitações, notícias e informações turísticas da cidade.
+            O portal da Prefeitura de Brazópolis rodava em PHP 5, com design dos anos 2000,
+            navegação confusa e nenhuma adaptação para celular. Pior: a versão obsoleta do PHP
+            deixava o site aberto, e ele sofria <strong>ataques hacker</strong> com frequência.
+            O primeiro passo foi migrar para PHP 8 e fechar as falhas de segurança. Depois disso
+            construímos uma plataforma nova, em que o cidadão acha serviços municipais, licitações,
+            notícias e informações turísticas sem caçar pelo menu.
           </Typography>
         </Paper>
 
@@ -197,7 +196,7 @@ export default function CaseStudyBrazopolis() {
           }}
         >
           <CompareArrowsIcon sx={{ color: 'primary.main' }} />
-          Antes vs Depois
+          Antes e depois
         </Typography>
 
         {comparisons.map((comparison, index) => (
@@ -293,7 +292,7 @@ export default function CaseStudyBrazopolis() {
           }}
         >
           <CheckCircleIcon sx={{ color: 'secondary.main' }} />
-          Melhorias Implementadas
+          O que mudou
         </Typography>
 
         <Grid container spacing={3} sx={{ mb: 6 }}>
@@ -406,7 +405,7 @@ export default function CaseStudyBrazopolis() {
               transition: 'all 0.3s ease',
             }}
           >
-            Vamos Conversar no WhatsApp
+            Falar no WhatsApp
           </Button>
         </Paper>
 
@@ -415,7 +414,7 @@ export default function CaseStudyBrazopolis() {
           <Button
             variant="outlined"
             size="large"
-            href="https://visitebrazopolis.com.br"
+            href="https://brazopolis.mg.gov.br"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
@@ -430,7 +429,7 @@ export default function CaseStudyBrazopolis() {
               },
             }}
           >
-            Ver Site Novo ao Vivo
+            Ver o site no ar
           </Button>
         </Box>
       </Container>

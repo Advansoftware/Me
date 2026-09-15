@@ -20,6 +20,7 @@ interface ProjectCardProps {
   description: string;
   image: string;
   url: string;
+  urlLabel?: string;
   caseStudyUrl?: string;
   tags: string[];
   index: number;
@@ -30,6 +31,7 @@ export default function ProjectCard({
   description,
   image,
   url,
+  urlLabel = 'Visitar',
   caseStudyUrl,
   tags,
   index,
@@ -46,7 +48,11 @@ export default function ProjectCard({
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        transition: 'all 0.3s ease',
+        // o transform fica só com o framer-motion; o CSS anima apenas a sombra
+        transition: 'box-shadow 0.3s ease',
+        // backdrop-filter + clip arredondado reserrilha a cada frame e deixa um fio claro na borda
+        backdropFilter: 'none',
+        willChange: 'transform',
         '&:hover': {
           boxShadow: '0 20px 60px rgba(139, 92, 246, 0.2)',
           '& .project-image': {
@@ -55,7 +61,7 @@ export default function ProjectCard({
         },
       }}
     >
-      <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+      <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: '12px 12px 0 0' }}>
         <CardMedia
           component="img"
           height="220"
@@ -118,7 +124,7 @@ export default function ProjectCard({
                 },
               }}
             >
-              Estudo de Caso
+              Estudo de caso
             </Button>
           )}
           <Button
@@ -136,7 +142,7 @@ export default function ProjectCard({
             }}
             onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
           >
-            Visitar
+            {urlLabel}
           </Button>
         </Stack>
       </CardContent>

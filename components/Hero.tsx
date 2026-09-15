@@ -73,7 +73,7 @@ export default function Hero() {
                 textTransform: 'uppercase',
               }}
             >
-              Full Stack Developer
+              Fundador da AdvanSoftware · Full Stack Developer
             </Typography>
 
             <Typography
@@ -109,8 +109,8 @@ export default function Hero() {
                 lineHeight: 1.8,
               }}
             >
-              Desenvolvedor Full Stack apaixonado por tecnologia, sempre aprendendo! 
-              Criando soluções inovadoras com React, Next.js, Node.js, PHP e agora explorando Flutter.
+              Trabalho com React, Next.js, Node.js e PHP, do banco de dados até a tela,
+              e construo produtos com IA. Agora estou aprendendo Flutter para mobile.
             </Typography>
 
             <Typography
@@ -125,7 +125,7 @@ export default function Hero() {
               }}
             >
               📍 Brazópolis/MG, Brasil • 
-              <Box component="span" sx={{ color: 'primary.light' }}>70+ repositórios</Box> • 
+              <Box component="span" sx={{ color: 'primary.light' }}>80+ repositórios</Box> • 
               <Box component="span" sx={{ color: 'secondary.main' }}>Arctic Code Vault Contributor</Box>
             </Typography>
 
@@ -136,7 +136,7 @@ export default function Hero() {
                 endIcon={<ArrowForwardIcon />}
                 onClick={scrollToProjects}
               >
-                Ver Projetos
+                Ver projetos
               </Button>
               <Button
                 variant="outlined"
